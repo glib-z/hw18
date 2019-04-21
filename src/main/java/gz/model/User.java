@@ -6,10 +6,10 @@ public class User {
     private String name;
     private String username;
     private String email;
-    private Address AddressObject;
+    private Address address;
     private String phone;
     private String website;
-    private Company CompanyObject;
+    private Company company;
 
     public User() {
     }
@@ -30,8 +30,8 @@ public class User {
         this.email = email;
     }
 
-    public void setAddressObject(Address addressObject) {
-        AddressObject = addressObject;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public void setPhone(String phone) {
@@ -42,8 +42,8 @@ public class User {
         this.website = website;
     }
 
-    public void setCompanyObject(Company companyObject) {
-        CompanyObject = companyObject;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public float getId() {
@@ -62,8 +62,8 @@ public class User {
         return email;
     }
 
-    public Address getAddressObject() {
-        return AddressObject;
+    public Address getAddress() {
+        return address;
     }
 
     public String getPhone() {
@@ -74,8 +74,8 @@ public class User {
         return website;
     }
 
-    public Company getCompanyObject() {
-        return CompanyObject;
+    public Company getCompany() {
+        return company;
     }
 
     @Override
@@ -85,10 +85,10 @@ public class User {
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", AddressObject=" + AddressObject +
+                ", address=" + address +
                 ", phone='" + phone + '\'' +
                 ", website='" + website + '\'' +
-                ", CompanyObject=" + CompanyObject +
+                ", company=" + company +
                 '}';
     }
 }

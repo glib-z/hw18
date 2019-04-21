@@ -1,16 +1,16 @@
 package gz.utills;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import okhttp3.*;
 
 import java.io.IOException;
 
-public class UseOkHttp {
+class UseOkHttp {
 
-    public static String status;
+    static String status;
 
-    public static String request(String url) {
+    private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
+
+    static String request(String url) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url(url).build();
         try {
@@ -23,5 +23,20 @@ public class UseOkHttp {
         }
         return "Error";
     }
+
+
+    static String post(String url, String json) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        RequestBody body = RequestBody.create(JSON, json);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            assert response.body() != null;
+            return response.body().string();
+        }
+    }
+
 
 }

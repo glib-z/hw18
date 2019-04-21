@@ -5,7 +5,7 @@ public class Address {
     private String suite;
     private String city;
     private String zipcode;
-    private Geo GeoObject;
+    private Geo geo;
 
     public Address() {
     }
@@ -26,8 +26,8 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-    public void setGeoObject(Geo geoObject) {
-        GeoObject = geoObject;
+    public void setGeo(Geo geo) {
+        this.geo = geo;
     }
 
     public String getStreet() {
@@ -46,8 +46,8 @@ public class Address {
         return zipcode;
     }
 
-    public Geo getGeoObject() {
-        return GeoObject;
+    public Geo getGeo() {
+        return geo;
     }
 
     @Override
@@ -57,7 +57,7 @@ public class Address {
                 ", suite='" + suite + '\'' +
                 ", city='" + city + '\'' +
                 ", zipcode='" + zipcode + '\'' +
-                ", GeoObject=" + GeoObject +
+                ", geo=" + geo +
                 '}';
     }
 }
